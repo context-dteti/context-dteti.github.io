@@ -6,25 +6,20 @@ import Footer from "@/components/footer";
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#0f172a]">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1a3b] via-[#0f2557] to-[#162d6b]">
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(30, 58, 138, 0.5) 0%, transparent 70%)",
+              "radial-gradient(ellipse 70% 50% at 50% 45%, rgba(37, 99, 235, 0.18) 0%, transparent 70%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 50% 50% at 80% 20%, rgba(37, 99, 235, 0.25) 0%, transparent 70%)",
-          }}
-        />
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              "radial-gradient(ellipse 40% 40% at 75% 25%, rgba(99, 102, 241, 0.12) 0%, transparent 60%)",
           }}
         />
       </div>
