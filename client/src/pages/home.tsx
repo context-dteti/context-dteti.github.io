@@ -40,9 +40,11 @@ function HeroSection() {
               "radial-gradient(circle 350px at 35% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 60%)",
           }}
         />
-        <div className="absolute inset-0 opacity-[0.07]"
+        <div className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Ccircle cx='20' cy='20' r='0.8'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.08'%3E%3Cpath d='M60 0H0v60' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
+            maskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)",
           }}
         />
       </div>
