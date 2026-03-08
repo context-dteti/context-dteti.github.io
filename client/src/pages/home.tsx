@@ -6,20 +6,39 @@ import Footer from "@/components/footer";
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1a3b] via-[#0f2557] to-[#162d6b]">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#0a1628]">
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 50% at 50% 45%, rgba(37, 99, 235, 0.18) 0%, transparent 70%)",
+              "radial-gradient(circle 600px at 20% 30%, rgba(30, 58, 138, 0.45) 0%, transparent 70%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 40% 40% at 75% 25%, rgba(99, 102, 241, 0.12) 0%, transparent 60%)",
+              "radial-gradient(circle 500px at 75% 60%, rgba(37, 99, 235, 0.3) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle 400px at 60% 15%, rgba(99, 102, 241, 0.2) 0%, transparent 60%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle 350px at 35% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 60%)",
+          }}
+        />
+        <div className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Ccircle cx='20' cy='20' r='0.8'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
       </div>
