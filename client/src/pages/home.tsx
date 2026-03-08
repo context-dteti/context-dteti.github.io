@@ -42,11 +42,11 @@ function HeroSection() {
         />
         <div className="absolute inset-0"
           style={{
-            backgroundSize: "48px 48px",
+            backgroundSize: "64px 64px",
             backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
-            maskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black 10%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black 10%, transparent 70%)",
+              "linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px)",
+            maskImage: "radial-gradient(ellipse 75% 65% at 50% 50%, black 10%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 75% 65% at 50% 50%, black 10%, transparent 70%)",
           }}
         />
       </div>
