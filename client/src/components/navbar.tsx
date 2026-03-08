@@ -39,7 +39,7 @@ export default function Navbar() {
         className={`transition-all duration-500 ease-in-out backdrop-blur-md ${
           showPill
             ? "max-w-5xl mx-auto rounded-full bg-white/95 shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
-            : "w-full bg-white/10 shadow-none"
+            : "w-full bg-transparent shadow-none backdrop-blur-none"
         }`}
       >
         <div className="px-5 sm:px-6 h-14 flex items-center justify-between gap-4">
