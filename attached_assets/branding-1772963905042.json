@@ -1,0 +1,104 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Arial",
+      "role": "body"
+    },
+    {
+      "family": "Lato",
+      "role": "heading"
+    },
+    {
+      "family": "Open Sans",
+      "role": "body"
+    },
+    {
+      "family": "Times New Roman",
+      "role": "unknown"
+    },
+    {
+      "family": "Verdana",
+      "role": "unknown"
+    }
+  ],
+  "colors": {
+    "primary": "#0000EE",
+    "accent": "#3A84B2",
+    "background": "#FFFFFF",
+    "textPrimary": "#3A84B2",
+    "link": "#3A84B2"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Arial",
+      "heading": "Lato"
+    },
+    "fontStacks": {
+      "heading": [
+        "Lato",
+        "Arial"
+      ],
+      "body": [
+        "Times New Roman"
+      ],
+      "paragraph": [
+        "Open Sans",
+        "Arial"
+      ]
+    },
+    "fontSizes": {
+      "h1": "0px",
+      "h2": "18px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "3px"
+  },
+  "components": {},
+  "images": {
+    "logo": "https://lsds.doc.ic.ac.uk/sites/default/files/lsds-logo-2017-2.jpg",
+    "favicon": "https://lsds.doc.ic.ac.uk/sites/default/files/lsds_logo.ico",
+    "ogImage": null,
+    "logoHref": "https://lsds.doc.ic.ac.uk",
+    "logoAlt": "Nexuse"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is the only candidate, is visible, and links to the homepage, matching the brand inferred from the URL and page title (LSDS - Large-Scale Data & Systems Group, Imperial College London).",
+    "confidence": 0.85,
+    "source": "llm"
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "academics and researchers"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0.9,
+    "overall": 0.45
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is the only candidate, is visible, and links to the homepage, matching the brand inferred from the URL and page title (LSDS - Large-Scale Data & Systems Group, Imperial College London).",
+        "confidence": 0.85
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": false,
+      "llmSucceeded": false
+    }
+  }
+}
