@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav
         className={`transition-all duration-500 ease-in-out backdrop-blur-md ${
           showPill
-            ? "max-w-5xl mx-auto rounded-full bg-white/95 shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
+            ? "max-w-7xl mx-auto rounded-full bg-white/95 shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
             : "w-full bg-transparent shadow-none backdrop-blur-none"
         }`}
       >
