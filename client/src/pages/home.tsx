@@ -42,9 +42,18 @@ function HeroSection() {
         />
         <div className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.08'%3E%3Cpath d='M60 0H0v60' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
-            maskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)",
+            backgroundSize: "80px 80px",
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            maskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, black 10%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, black 10%, transparent 70%)",
+          }}
+        />
+        <div className="absolute inset-0"
+          style={{
+            backgroundSize: "80px 80px",
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
           }}
         />
       </div>
