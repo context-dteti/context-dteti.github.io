@@ -1,8 +1,12 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Cpu, Globe, Zap } from "lucide-react";
+import { ArrowRight, ChevronDown, Cpu, Globe, Zap, Users } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { PROJECTS, PEOPLE, getPeopleForProject } from "@/lib/data";
 
 function HeroSection() {
   return (
@@ -196,12 +200,216 @@ function AboutSection() {
   );
 }
 
+const AVATAR_COLORS = [
+  "bg-[#1e3a8a]",
+  "bg-[#7c3aed]",
+  "bg-[#0891b2]",
+  "bg-[#059669]",
+  "bg-[#d97706]",
+  "bg-[#dc2626]",
+  "bg-[#2563eb]",
+  "bg-[#4f46e5]",
+];
+
+function ProjectsPreview() {
+  const preview = PROJECTS.slice(0, 6);
+
+  return (
+    <section className="py-24 bg-[#eef2f7]">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-end justify-between gap-4 mb-10 flex-wrap"
+        >
+          <div>
+            <p className="text-[#2563eb] text-xs font-semibold uppercase tracking-[0.15em] mb-2">
+              Research
+            </p>
+            <h2 className="text-3xl font-bold text-[#0f172a]">Projects</h2>
+          </div>
+          <Link href="/projects">
+            <span className="inline-flex items-center gap-1.5 text-[#2563eb] text-sm font-semibold hover:underline cursor-pointer" data-testid="link-explore-projects">
+              View all projects
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {preview.map((project, i) => {
+            const Icon = project.icon;
+            const people = getPeopleForProject(project);
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+              >
+                <Link href="/projects">
+                  <Card
+                    className="hover-elevate cursor-pointer h-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                    data-testid={`home-card-project-${project.id}`}
+                  >
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-10 h-10 rounded-lg bg-[#eff6ff] flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-[#2563eb]" />
+                        </div>
+                        <h3 className="font-bold text-[#0f172a] text-[15px] leading-snug truncate">
+                          {project.name}
+                        </h3>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0 flex flex-col gap-4">
+                      <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3">
+                        {project.shortDesc}
+                      </p>
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tags.slice(0, 2).map((tag) => (
+                            <Badge
+                              key={tag}
+                              variant="secondary"
+                              className="text-[10px] font-medium bg-[#f1f5f9] text-[#475569] border-none"
+                            >
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-1 text-[#94a3b8]">
+                          <Users className="w-3.5 h-3.5" />
+                          <span className="text-[11px] font-medium">{people.length}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {PROJECTS.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <Link href="/projects">
+              <span
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white border border-[#dbe4ee] text-[#2563eb] text-sm font-semibold cursor-pointer transition-all duration-200 hover:shadow-md hover:border-[#2563eb]/30"
+                data-testid="button-explore-more-projects"
+              >
+                Explore {PROJECTS.length - 6} more projects
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function PeoplePreview() {
+  const preview = PEOPLE.slice(0, 6);
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-end justify-between gap-4 mb-10 flex-wrap"
+        >
+          <div>
+            <p className="text-[#2563eb] text-xs font-semibold uppercase tracking-[0.15em] mb-2">
+              Team
+            </p>
+            <h2 className="text-3xl font-bold text-[#0f172a]">People</h2>
+          </div>
+          <Link href="/people">
+            <span className="inline-flex items-center gap-1.5 text-[#2563eb] text-sm font-semibold hover:underline cursor-pointer" data-testid="link-explore-people">
+              View all members
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {preview.map((person, i) => (
+            <motion.div
+              key={person.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+            >
+              <Card
+                className="h-full border-[#f1f5f9] bg-[#fafbfc] text-center p-4"
+                data-testid={`home-card-person-${person.id}`}
+              >
+                <CardContent className="p-0 flex flex-col items-center gap-2.5">
+                  <Avatar className="w-14 h-14">
+                    <AvatarFallback
+                      className={`${AVATAR_COLORS[i % AVATAR_COLORS.length]} text-white font-semibold text-sm`}
+                    >
+                      {person.initials}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-semibold text-[#0f172a] text-[13px] leading-tight">
+                      {person.name}
+                    </p>
+                    <p className="text-[#2563eb] text-[11px] font-medium mt-0.5">
+                      {person.role}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {PEOPLE.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <Link href="/people">
+              <span
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#eff6ff] border border-[#dbeafe] text-[#2563eb] text-sm font-semibold cursor-pointer transition-all duration-200 hover:shadow-md hover:bg-[#dbeafe]"
+                data-testid="button-explore-more-people"
+              >
+                Meet {PEOPLE.length - 6} more members
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <ProjectsPreview />
+      <PeoplePreview />
       <Footer />
     </div>
   );
