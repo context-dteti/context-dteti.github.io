@@ -17,13 +17,13 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setMenuOpen(false);
     window.scrollTo({ top: 0 });
+    setScrolled(false);
   }, [location]);
 
   const showPill = scrolled || !isHome;
