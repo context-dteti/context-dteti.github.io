@@ -1,27 +1,34 @@
 # CONTEXT Lab — Research Group Landing Page
 
 ## Overview
-A professional, single-page landing website for the CONTEXT (Context-Aware Computing) Research Laboratory led by Dr. Azka Maulana at Universitas Gadjah Mada. Inspired by the LSDS Imperial College London website structure.
+A professional, multi-route landing website for the CONTEXT (Context-Aware Computing) Research Laboratory led by Dr. Azka Maulana at Universitas Gadjah Mada. Inspired by the LSDS Imperial College London website structure.
 
 ## Architecture
 - **Frontend only** — static landing page, no backend API needed
 - **React + TypeScript** with Vite
 - **Styling**: Tailwind CSS + shadcn/ui components
-- **Animations**: framer-motion for scroll-triggered animations
-- **Routing**: wouter (single route `/`)
+- **Animations**: framer-motion for scroll-triggered and entrance animations
+- **Routing**: wouter with separate routes (not anchor-based scrolling)
 
-## Pages
-- `/` — Main landing page (`client/src/pages/home.tsx`)
+## Routes / Pages
+- `/` — Home page with hero + about section (`client/src/pages/home.tsx`)
+- `/projects` — Project cards grid with clickable modals (`client/src/pages/projects.tsx`)
+- `/people` — Team member cards (`client/src/pages/people.tsx`)
 
-## Landing Page Sections
-1. **Hero** — Full-screen gradient hero with animated CTA buttons and scroll indicator
-2. **About (#about)** — Lab description, stats grid (projects, publications, researchers, partners), and research focus tags
-3. **Video (#video)** — YouTube embed for lab overview video
-4. **People (#people)** — Team member cards with avatar initials (8 members including Dr. Azka Maulana as PI)
-5. **Projects (#projects)** — 8 research project cards in a responsive grid
-6. **Footer** — Lab info, navigation links, contact address
+## Shared Components
+- `client/src/components/navbar.tsx` — Sticky navbar, transparent on hero, solid on scroll/inner pages
+- `client/src/components/footer.tsx` — Footer with navigation, contact info
 
-## Projects
+## Data
+- `client/src/lib/data.ts` — All project and people data, shared across pages
+
+## Project Modal Features
+Each project card opens a dialog with:
+- YouTube video embed
+- Full project description
+- Team members list with avatars
+
+## Projects (8 total)
 1. Hyperbase — Distributed database for IoT
 2. INSPIRASI Project: Disaster — Sensor-based disaster prediction
 3. MiniWeather Station — Low-cost weather monitoring nodes
@@ -32,12 +39,7 @@ A professional, single-page landing website for the CONTEXT (Context-Aware Compu
 8. People Mobility — Urban crowd dynamics analysis
 
 ## Color Theme
-- Primary brand: Royal Blue (#1e3a8a / blue-700)
-- Background: White (#ffffff) and Slate (#f8fafc)
-- Text: Charcoal/Slate-600 (#334155)
-- Navbar: Transparent on hero, white/frosted on scroll
-
-## Key Files
-- `client/src/pages/home.tsx` — All landing page sections
-- `client/src/App.tsx` — Root router
-- `client/index.html` — SEO meta tags
+- Hero: Dark navy (#0f172a) with blue radial gradients
+- Primary accent: Blue (#2563eb / #1e3a8a)
+- Backgrounds: White (#ffffff), Slate (#fafbfc), Light borders (#f1f5f9)
+- Text: Dark navy (#0f172a) for headings, Slate (#64748b) for body
