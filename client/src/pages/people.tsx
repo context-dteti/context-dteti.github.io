@@ -23,10 +23,10 @@ function getProjectsForPerson(personId: number) {
 
 export default function PeoplePage() {
   return (
-    <div className="min-h-screen bg-[#fafbfc]">
+    <div className="min-h-screen bg-[#eef2f7]">
       <Navbar />
 
-      <section className="pt-28 pb-6 bg-white border-b border-[#f1f5f9]">
+      <section className="pt-28 pb-6 bg-white border-b border-[#e2e8f0]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -58,7 +58,7 @@ export default function PeoplePage() {
                   transition={{ duration: 0.4, delay: i * 0.06 }}
                   data-testid={`card-person-${person.id}`}
                 >
-                  <Card className="h-full border-[#e2e8f0] bg-white">
+                  <Card className="h-full border-[#dbe4ee] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
                     <CardContent className="p-5 flex flex-col gap-4">
                       <div className="flex items-center gap-3">
                         <Avatar className="w-12 h-12">

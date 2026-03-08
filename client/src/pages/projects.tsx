@@ -45,7 +45,7 @@ function ProjectCard({
       transition={{ duration: 0.4, delay: index * 0.06 }}
     >
       <Card
-        className="hover-elevate cursor-pointer h-full border-[#e2e8f0] bg-white group transition-all duration-200"
+        className="hover-elevate cursor-pointer h-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
         onClick={onClick}
         data-testid={`card-project-${project.id}`}
       >
@@ -154,12 +154,17 @@ function ProjectModal({
             </div>
           </DialogHeader>
 
-          <DialogDescription className="text-[#475569] text-sm leading-relaxed mb-6">
-            {project.fullDesc}
-          </DialogDescription>
+          <div className="mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-[#94a3b8] mb-2">
+              Description
+            </h4>
+            <DialogDescription className="text-[#475569] text-[13px] leading-[1.7] bg-[#f8fafc] rounded-lg p-4 border border-[#f1f5f9]">
+              {project.fullDesc}
+            </DialogDescription>
+          </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#94a3b8] mb-3">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-[#94a3b8] mb-3">
               Team Members
             </h4>
             <div className="flex flex-col gap-2">
@@ -198,10 +203,10 @@ export default function ProjectsPage() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#fafbfc]">
+    <div className="min-h-screen bg-[#eef2f7]">
       <Navbar />
 
-      <section className="pt-28 pb-6 bg-white border-b border-[#f1f5f9]">
+      <section className="pt-28 pb-6 bg-white border-b border-[#e2e8f0]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
