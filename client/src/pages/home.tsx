@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { PROJECTS, PEOPLE, getPeopleForProject } from "@/lib/data";
+import { PEOPLE } from "@/lib/data";
+import { PROJECTS, getPeopleForProject } from "@/lib/projects";
 
 function HeroSection() {
   return (
@@ -244,30 +245,24 @@ function ProjectsPreview() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {preview.map((project, i) => {
-            const Icon = project.icon;
             const people = getPeopleForProject(project);
             return (
               <motion.div
-                key={project.id}
+                key={project.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <Link href="/projects">
+                <Link href={`/projects/${project.slug}`}>
                   <Card
                     className="hover-elevate cursor-pointer h-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
-                    data-testid={`home-card-project-${project.id}`}
+                    data-testid={`home-card-project-${project.slug}`}
                   >
                     <CardHeader className="pb-3">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-lg bg-[#eff6ff] flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-5 h-5 text-[#2563eb]" />
-                        </div>
-                        <h3 className="font-bold text-[#0f172a] text-[15px] leading-snug truncate">
-                          {project.name}
-                        </h3>
-                      </div>
+                      <h3 className="font-bold text-[#0f172a] text-[15px] leading-snug">
+                        {project.name}
+                      </h3>
                     </CardHeader>
                     <CardContent className="pt-0 flex flex-col gap-4">
                       <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3">

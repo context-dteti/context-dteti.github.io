@@ -4,7 +4,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { PEOPLE, PROJECTS } from "@/lib/data";
+import { PEOPLE } from "@/lib/data";
+import { PROJECTS } from "@/lib/projects";
 
 const AVATAR_COLORS = [
   "bg-[#1e3a8a]",

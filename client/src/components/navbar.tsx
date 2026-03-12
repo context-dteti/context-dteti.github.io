@@ -41,12 +41,14 @@ export default function Navbar() {
         style={{
           maxWidth: showPill ? "1280px" : "100%",
           margin: "0 auto",
-          borderRadius: showPill ? "9999px" : "0px",
-          backgroundColor: showPill ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0)",
-          boxShadow: showPill ? "0 4px 20px rgba(0,0,0,0.10)" : "0 0px 0px rgba(0,0,0,0)",
+          borderRadius: showPill ? (menuOpen ? "20px" : "9999px") : "0px",
+          backgroundColor: showPill ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0)",
+          border: showPill ? "1px solid rgba(0,0,0,0.06)" : "1px solid transparent",
+          boxShadow: showPill ? "0 1px 2px rgba(0,0,0,0.06), 0 6px 20px rgba(0,0,0,0.06)" : "0 0px 0px rgba(0,0,0,0)",
           backdropFilter: showPill ? "blur(12px)" : "blur(0px)",
           WebkitBackdropFilter: showPill ? "blur(12px)" : "blur(0px)",
-          transition: "max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+          overflow: "hidden",
+          transition: `max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-radius ${menuOpen ? "0s" : "0.35s cubic-bezier(0.4, 0, 0.2, 1)"}, background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)`,
         }}
       >
         <div className="px-5 sm:px-6 h-14 flex items-center justify-between gap-4">
@@ -121,9 +123,7 @@ export default function Navbar() {
         {menuOpen && (
           <div
             className={`md:hidden border-t px-5 py-3 flex flex-col gap-1 ${
-              showPill
-                ? "border-[#f1f5f9] rounded-b-2xl"
-                : "border-white/10"
+              showPill ? "border-[#f1f5f9]" : "border-white/10"
             }`}
           >
             {NAV_LINKS.map((link) => {
