@@ -1,7 +1,7 @@
 ---
 name: People Mobility
 shortDesc: Crowd dynamics and human mobility analysis using GPS, Wi-Fi probes, and social signals for smarter urban planning.
-videoUrl: https://www.youtube.com/embed/dQw4w9WgXcQ
+videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
 tags: [Mobility, Urban Computing, Analytics]
 funder: ""
 categories: [Mobility, Urban Computing]

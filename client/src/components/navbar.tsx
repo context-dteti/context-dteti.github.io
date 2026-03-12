@@ -93,10 +93,10 @@ export default function Navbar() {
                   className={`px-4 py-1.5 rounded-full text-[13px] font-medium tracking-wide no-underline`}
                   style={{
                     color: showPill
-                      ? isActive ? "#1e3a8a" : "#64748b"
+                      ? isActive ? "#ffffff" : "#64748b"
                       : isActive ? "#ffffff" : "rgba(255,255,255,0.7)",
                     backgroundColor: showPill
-                      ? isActive ? "#eff6ff" : "transparent"
+                      ? isActive ? "#2563eb" : "transparent"
                       : isActive ? "rgba(255,255,255,0.15)" : "transparent",
                     transition: "color 0.4s ease, background-color 0.4s ease",
                   }}
@@ -135,7 +135,7 @@ export default function Navbar() {
                   className={`px-4 py-2.5 rounded-lg text-sm font-medium no-underline transition-colors ${
                     showPill
                       ? isActive
-                        ? "text-[#1e3a8a] bg-[#eff6ff]"
+                        ? "text-white bg-[#2563eb]"
                         : "text-[#475569] hover:bg-[#f8fafc] hover:text-[#1e3a8a]"
                       : isActive
                         ? "text-white bg-white/15"

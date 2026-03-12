@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Cpu, Globe, Zap, Users } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { PEOPLE } from "@/lib/data";
@@ -143,8 +143,9 @@ function AboutSection() {
             Building the future of context-aware computing
           </h2>
           <p className="text-[#64748b] leading-relaxed">
-            Led by Dr. Azka Maulana at Universitas Gadjah Mada, CONTEXT Lab
-            brings together researchers in wireless sensing, embedded systems,
+            Led by Ir. Azkario Rizky Pratama, S.T., M.Eng., Ph.D., IPM at
+            Departemen Teknik Elektro dan Teknologi Informasi, Universitas Gadjah Mada,
+            CONTEXT Lab brings together researchers in wireless sensing, embedded systems,
             machine learning, and distributed computing to address challenges in
             smart environments, disaster management, cultural heritage, and
             urban mobility.
@@ -181,10 +182,10 @@ function AboutSection() {
           className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: "8+", label: "Active Projects" },
-            { value: "15+", label: "Publications" },
-            { value: "12", label: "Researchers" },
-            { value: "5+", label: "Industry Partners" },
+            { value: String(PROJECTS.length), label: "Active Projects" },
+            { value: String(PEOPLE.length), label: "Researchers" },
+            { value: String(new Set(PROJECTS.flatMap((p) => p.tags)).size) + "+", label: "Research Areas" },
+            { value: String(new Set(PROJECTS.flatMap((p) => p.categories)).size), label: "Categories" },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -352,28 +353,36 @@ function PeoplePreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <Card
-                className="h-full border-[#f1f5f9] bg-[#fafbfc] text-center p-4"
-                data-testid={`home-card-person-${person.id}`}
+              <a
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline block h-full"
               >
-                <CardContent className="p-0 flex flex-col items-center gap-2.5">
-                  <Avatar className="w-14 h-14">
-                    <AvatarFallback
-                      className={`${AVATAR_COLORS[i % AVATAR_COLORS.length]} text-white font-semibold text-sm`}
-                    >
-                      {person.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold text-[#0f172a] text-[13px] leading-tight">
-                      {person.name}
-                    </p>
-                    <p className="text-[#2563eb] text-[11px] font-medium mt-0.5">
-                      {person.role}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                <Card
+                  className="h-full border-[#f1f5f9] bg-[#fafbfc] text-center p-4 hover:border-[#dbeafe] hover:shadow-md transition-all duration-200"
+                  data-testid={`home-card-person-${person.id}`}
+                >
+                  <CardContent className="p-0 flex flex-col items-center gap-2.5">
+                    <Avatar className="w-14 h-14">
+                      <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                      <AvatarFallback
+                        className={`${AVATAR_COLORS[i % AVATAR_COLORS.length]} text-white font-semibold text-sm`}
+                      >
+                        {person.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-semibold text-[#0f172a] text-[13px] leading-tight">
+                        {person.name}
+                      </p>
+                      <p className="text-[#2563eb] text-[11px] font-medium mt-0.5">
+                        {person.role}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </div>

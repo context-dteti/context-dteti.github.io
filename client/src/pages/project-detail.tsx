@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { PROJECTS, getProjectBySlug, getPeopleForProject } from "@/lib/projects";
@@ -80,17 +80,25 @@ export default function ProjectDetailPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="space-y-8"
             >
-              {project.videoUrl && (
-                <div className="relative w-full aspect-video bg-[#0f172a] rounded-xl overflow-hidden shadow-lg">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={project.videoUrl}
-                    title={`${project.name} Video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              )}
+              {project.videoUrl && (() => {
+                let embedUrl = project.videoUrl;
+                // Convert Google Drive /view URL to /preview for embedding
+                const driveMatch = embedUrl.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+                if (driveMatch) {
+                  embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+                }
+                return (
+                  <div className="relative w-full aspect-video bg-[#0f172a] rounded-xl overflow-hidden shadow-lg">
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={embedUrl}
+                      title={`${project.name} Video`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                );
+              })()}
 
               <div className="bg-white rounded-xl border border-[#dbe4ee] p-6 sm:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
                 <div className="prose prose-slate max-w-none prose-headings:text-[#0f172a] prose-p:text-[#475569] prose-p:leading-[1.8] prose-li:text-[#475569] prose-strong:text-[#1e293b] prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3">
@@ -194,8 +202,15 @@ export default function ProjectDetailPage() {
                   </h4>
                   <div className="flex flex-col gap-2.5">
                     {people.map((person, i) => (
-                      <div key={person.id} className="flex items-center gap-3">
+                      <a
+                        key={person.id}
+                        href={person.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 no-underline hover:bg-[#f8fafc] rounded-lg p-1 -m-1 transition-colors"
+                      >
                         <Avatar className="w-8 h-8">
+                          <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
                           <AvatarFallback
                             className={`${AVATAR_COLORS[i % AVATAR_COLORS.length]} text-white text-[11px] font-semibold`}
                           >
@@ -210,7 +225,7 @@ export default function ProjectDetailPage() {
                             {person.role}
                           </p>
                         </div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
