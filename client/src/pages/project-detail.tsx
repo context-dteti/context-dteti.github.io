@@ -87,6 +87,13 @@ export default function ProjectDetailPage() {
                 if (driveMatch) {
                   embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
                 }
+                // Convert YouTube URLs to embed format
+                const youtubeMatch = embedUrl.match(
+                  /(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/
+                );
+                if (youtubeMatch) {
+                  embedUrl = `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+                }
                 return (
                   <div className="relative w-full aspect-video bg-[#0f172a] rounded-xl overflow-hidden shadow-lg">
                     <iframe
