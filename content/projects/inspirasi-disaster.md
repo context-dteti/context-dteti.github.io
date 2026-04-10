@@ -1,7 +1,7 @@
 ---
 name: "INSPIRASI Project: Disaster"
 shortDesc: An intelligent sensor-based platform for real-time disaster prediction and early warning systems using multimodal sensing.
-videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
+videoUrl:
 tags: [Disaster Management, Sensing, Machine Learning]
 funder: ""
 categories: [Disaster Management, Sensing]

@@ -1,7 +1,7 @@
 ---
 name: MiniWeather Station
 shortDesc: A compact, low-cost, solar-powered weather monitoring node deployable at scale for hyperlocal meteorological data.
-videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
+videoUrl: https://youtu.be/uFzErZGA1pk?si=7xSytqC18rBRwjsL
 tags: [IoT, Weather, Embedded Systems]
 funder: ""
 categories: [IoT, Environmental Monitoring]

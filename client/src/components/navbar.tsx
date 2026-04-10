@@ -11,7 +11,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [location] = useLocation(); 
   const isHome = location === "/";
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 ---
 name: UWB Indoor Localization
 shortDesc: Ultra-Wideband centimeter-accurate indoor positioning for asset tracking, robot navigation, and personnel safety.
-videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
+videoUrl: 
 tags: [UWB, Localization, RTLS]
 funder: ""
 categories: [Localization, Wireless]

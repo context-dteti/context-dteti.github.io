@@ -1,7 +1,7 @@
 ---
 name: Borobudur Navigation App
 shortDesc: A context-aware indoor/outdoor navigation system for the Borobudur heritage site with AR-based cultural overlays.
-videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
+videoUrl: https://www.youtube.com/watch?v=iTOgVSd_YKQ
 tags: [Navigation, Heritage, Augmented Reality]
 funder: ""
 categories: [Navigation, Cultural Heritage]

@@ -1,7 +1,7 @@
 ---
 name: "CSI (Channel State Information)-based Context-Aware"
 shortDesc: Leveraging Wi-Fi Channel State Information for passive human activity recognition and contextual sensing without cameras.
-videoUrl: https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view
+videoUrl: 
 tags: [Wi-Fi Sensing, CSI, Activity Recognition]
 funder: ""
 categories: [Wi-Fi Sensing, Context-Aware]
