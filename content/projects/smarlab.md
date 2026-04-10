@@ -3,7 +3,7 @@ name: SmartLab
 shortDesc: A smart laboratory management ecosystem with real-time monitoring, energy optimization, and predictive maintenance.
 videoUrl: 
 tags: [Smart Building, IoT, Energy Efficiency]
-funder: ""
+funder: "https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view"
 categories: [Smart Building, IoT]
 people: [1, 4, 7]
 ---
