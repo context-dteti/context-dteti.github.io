@@ -84,7 +84,7 @@ export default function ProjectsPage() {
             <p className="text-[#2563eb] text-xs font-semibold uppercase tracking-[0.15em] mb-2">
               Research
             </p>
-            <h1 className="text-3xl font-bold text-[#0f172a] mb-3">Projects</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-3">Projects</h1>
             <p className="text-[#64748b] max-w-lg text-[15px] leading-relaxed">
               Ongoing and completed research projects in IoT, context-aware
               sensing, localization, and intelligent systems.

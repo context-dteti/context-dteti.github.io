@@ -65,20 +65,20 @@ export default function ProjectDetailPage() {
                 All Projects
               </span>
             </Link>
-            <h1 className="text-3xl font-bold text-[#0f172a] mt-3">{project.name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mt-3 break-words">{project.name}</h1>
           </motion.div>
         </div>
       </section>
 
       <section className="py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-[1fr_280px] gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px] gap-6 lg:gap-8">
             {/* Main content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="space-y-8"
+              className="space-y-8 min-w-0"
             >
               {project.videoUrl && (() => {
                 let embedUrl = project.videoUrl;
@@ -108,7 +108,7 @@ export default function ProjectDetailPage() {
               })()}
 
               <div className="bg-white rounded-xl border border-[#dbe4ee] p-5 sm:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-                <div className="prose prose-slate max-w-none prose-headings:text-[#0f172a] prose-p:text-[#475569] prose-p:leading-[1.8] prose-li:text-[#475569] prose-strong:text-[#1e293b] prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3">
+                <div className="prose prose-slate max-w-none break-words prose-headings:text-[#0f172a] prose-p:text-[#475569] prose-p:leading-[1.8] prose-li:text-[#475569] prose-strong:text-[#1e293b] prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3">
                   <ReactMarkdown>{project.body}</ReactMarkdown>
                 </div>
               </div>

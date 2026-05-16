@@ -40,7 +40,7 @@ export default function PeoplePage() {
             <p className="text-[#2563eb] text-xs font-semibold uppercase tracking-[0.15em] mb-2">
               Team
             </p>
-            <h1 className="text-3xl font-bold text-[#0f172a] mb-3">People</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-3">People</h1>
             <p className="text-[#64748b] max-w-lg text-[15px] leading-relaxed">
               A multidisciplinary team of researchers, engineers, and students
               working together to advance context-aware computing.
