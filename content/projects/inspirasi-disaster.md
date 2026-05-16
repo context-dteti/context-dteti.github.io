@@ -5,7 +5,7 @@ videoUrl:
 tags: [Disaster Management, Sensing, Machine Learning]
 funder: ""
 categories: [Disaster Management, Sensing]
-people: [1, 3, 5, 7]
+people: [1, 31, 32, 33, 34, 35]
 ---
 
 The INSPIRASI (Intelligent Sensor Platform for Indonesian Risk Assessment and Safety Infrastructure) project addresses Indonesia's critical need for robust, low-cost disaster early warning systems.

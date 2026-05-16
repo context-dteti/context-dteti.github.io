@@ -5,7 +5,7 @@ videoUrl:
 tags: [Mobility, Urban Computing, Analytics]
 funder: ""
 categories: [Mobility, Urban Computing]
-people: [1, 5, 6, 8]
+people: [1, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 ---
 
 The People Mobility project develops computational methods and tools for understanding human movement patterns in urban environments.

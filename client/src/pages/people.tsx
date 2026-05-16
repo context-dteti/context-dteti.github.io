@@ -5,6 +5,20 @@ import Footer from "@/components/footer";
 import { PEOPLE } from "@/lib/data";
 import { PROJECTS } from "@/lib/projects";
 
+const ROLE_ORDER: Record<string, number> = {
+  "Principal Investigator": 0,
+  "Co-Investigator": 1,
+  "Researcher": 2,
+  "Student": 3,
+};
+
+const SORTED_PEOPLE = [...PEOPLE].sort((a, b) => {
+  const ra = ROLE_ORDER[a.role] ?? 99;
+  const rb = ROLE_ORDER[b.role] ?? 99;
+  if (ra !== rb) return ra - rb;
+  return a.name.localeCompare(b.name, "id");
+});
+
 function getProjectsForPerson(personId: number) {
   return PROJECTS.filter((p) => p.people.includes(personId));
 }
@@ -38,7 +52,7 @@ export default function PeoplePage() {
       <section className="py-10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {PEOPLE.map((person, i) => {
+            {SORTED_PEOPLE.map((person, i) => {
               const projects = getProjectsForPerson(person.id);
               const extraProjects = projects.length - MAX_PROJECTS_SHOWN;
               return (
@@ -82,8 +96,9 @@ export default function PeoplePage() {
                                   key={proj.slug}
                                   variant="secondary"
                                   className="text-[10px] font-medium bg-[#f1f5f9] text-[#475569] border-none"
+                                  title={proj.name}
                                 >
-                                  {proj.name}
+                                  {proj.name.length > 25 ? proj.name.slice(0, 25).trimEnd() + "…" : proj.name}
                                 </Badge>
                               ))}
                               {extraProjects > 0 && (

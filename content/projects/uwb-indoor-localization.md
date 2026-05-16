@@ -5,7 +5,7 @@ videoUrl:
 tags: [UWB, Localization, RTLS]
 funder: ""
 categories: [Localization, Wireless]
-people: [1, 2, 6, 8]
+people: [1, 2, 3, 4]
 ---
 
 This project develops a centimeter-accurate indoor positioning system based on Ultra-Wideband (UWB) radio technology.

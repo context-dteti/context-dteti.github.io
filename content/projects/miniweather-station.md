@@ -5,7 +5,7 @@ videoUrl: https://youtu.be/uFzErZGA1pk?si=7xSytqC18rBRwjsL
 tags: [IoT, Weather, Embedded Systems]
 funder: ""
 categories: [IoT, Environmental Monitoring]
-people: [1, 4, 6]
+people: [1, 7, 17, 18, 19]
 ---
 
 MiniWeather Station is an ultra-compact, solar-powered environmental monitoring device designed for mass deployment across urban and rural landscapes.

@@ -5,7 +5,7 @@ videoUrl: https://youtu.be/31BHVFVIQRA
 tags: [Database, Distributed Systems, IoT]
 funder: ""
 categories: [Database, IoT]
-people: [1, 2, 4]
+people: [1, 5, 6, 7]
 ---
 
 Hyperbase is a next-generation distributed database engine specifically optimized for context-aware computing workloads. Built on a novel indexing architecture that partitions data by spatial and temporal context, it achieves sub-millisecond query latency even under high-throughput IoT data ingestion.

@@ -5,7 +5,7 @@ videoUrl:
 tags: [Wi-Fi Sensing, CSI, Activity Recognition]
 funder: ""
 categories: [Wi-Fi Sensing, Context-Aware]
-people: [1, 3, 7]
+people: [1, 20]
 ---
 
 This research investigates Wi-Fi Channel State Information (CSI) as a ubiquitous, privacy-preserving sensing modality for human activity recognition and environmental context inference.

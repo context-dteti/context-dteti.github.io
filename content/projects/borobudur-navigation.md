@@ -5,7 +5,7 @@ videoUrl: https://www.youtube.com/watch?v=iTOgVSd_YKQ
 tags: [Navigation, Heritage, Augmented Reality]
 funder: ""
 categories: [Navigation, Cultural Heritage]
-people: [1, 2, 5, 8]
+people: [1, 8, 9, 7, 10, 11, 12]
 ---
 
 The Borobudur Navigation App is a context-aware mobile application that transforms the visitor experience at Indonesia's iconic Borobudur Temple.

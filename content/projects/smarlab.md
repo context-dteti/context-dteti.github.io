@@ -5,7 +5,7 @@ videoUrl:
 tags: [Smart Building, IoT, Energy Efficiency]
 funder: "https://drive.google.com/file/d/15LTr5WR-MJreDqNmjXJ5QOjcOOM1l6Ez/view"
 categories: [Smart Building, IoT]
-people: [1, 4, 7]
+people: [1, 13, 14, 15, 16]
 ---
 
 SmarLab is an integrated smart laboratory management platform that transforms traditional research spaces into intelligent, self-optimizing environments.
