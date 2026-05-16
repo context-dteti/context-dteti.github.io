@@ -15,15 +15,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
+      className="min-w-0"
     >
       <Link href={`/projects/${project.slug}`}>
         <Card
-          className="hover-elevate cursor-pointer h-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+          className="hover-elevate cursor-pointer h-full w-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
           data-testid={`card-project-${project.slug}`}
         >
           <CardHeader className="pb-3">
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="font-bold text-[#0f172a] text-[15px] leading-snug truncate">
+            <div className="flex items-center justify-between gap-3 min-w-0">
+              <h3 className="font-bold text-[#0f172a] text-[15px] leading-snug truncate min-w-0">
                 {project.name}
               </h3>
               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#f1f5f9] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -32,12 +33,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </div>
           </CardHeader>
           <CardContent className="pt-0 flex flex-col gap-4">
-            <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3">
+            <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3 break-words">
               {project.shortDesc}
             </p>
 
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex flex-wrap gap-1.5">
+            <div className="flex items-center justify-between gap-2 min-w-0">
+              <div className="flex flex-wrap gap-1.5 min-w-0">
                 {project.tags.slice(0, 2).map((tag) => (
                   <Badge
                     key={tag}
@@ -56,7 +57,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   </Badge>
                 )}
               </div>
-              <div className="flex items-center gap-1 text-[#94a3b8]">
+              <div className="flex items-center gap-1 text-[#94a3b8] flex-shrink-0">
                 <Users className="w-3.5 h-3.5" />
                 <span className="text-[11px] font-medium">{people.length}</span>
               </div>
@@ -74,7 +75,7 @@ export default function ProjectsPage() {
       <Navbar />
 
       <section className="pt-28 pb-6 bg-white border-b border-[#e2e8f0]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,8 +94,8 @@ export default function ProjectsPage() {
       </section>
 
       <section className="py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {PROJECTS.map((project, i) => (
               <ProjectCard key={project.slug} project={project} index={i} />
             ))}

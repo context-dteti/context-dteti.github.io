@@ -52,21 +52,20 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-16">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/60 text-xs font-medium tracking-wide mb-8 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="text-white/60 text-sm sm:text-base font-medium tracking-wide mb-2 sm:mb-3">
             Context-Aware Computing Research Group
           </div>
 
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold text-white leading-[1.1] mb-5 tracking-tight">
             CONTEXT
           </h1>
-          <p className="text-[clamp(1rem,2.5vw,1.35rem)] text-[#94a3b8] font-light leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-[clamp(0.9rem,2.5vw,1.35rem)] text-[#94a3b8] font-light leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
             Advancing context-aware computing, IoT sensing, and intelligent
             systems at the intersection of wireless technology, data science,
             and real-world impact.
@@ -76,7 +75,7 @@ function HeroSection() {
             <Link href="/projects">
               <motion.div
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563eb] text-white text-sm font-semibold tracking-wide cursor-pointer transition-all duration-200 hover:bg-[#1d4ed8]"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-[#2563eb] text-white text-sm font-semibold tracking-wide cursor-pointer transition-all duration-200 hover:bg-[#1d4ed8]"
                 data-testid="button-hero-projects"
               >
                 Explore Projects
@@ -86,7 +85,7 @@ function HeroSection() {
             <Link href="/people">
               <motion.div
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/15 text-white/80 text-sm font-medium tracking-wide cursor-pointer transition-all duration-200 hover:bg-white/5 hover:text-white"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-white/15 text-white/80 text-sm font-medium tracking-wide cursor-pointer transition-all duration-200 hover:bg-white/5 hover:text-white"
                 data-testid="button-hero-people"
               >
                 Meet the Team
@@ -128,7 +127,7 @@ function AboutSection() {
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +151,7 @@ function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -222,7 +221,7 @@ function ProjectsPreview() {
 
   return (
     <section className="py-24 bg-[#eef2f7]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +243,7 @@ function ProjectsPreview() {
           </Link>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {preview.map((project, i) => {
             const people = getPeopleForProject(project);
             return (
@@ -254,10 +253,11 @@ function ProjectsPreview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="min-w-0"
               >
                 <Link href={`/projects/${project.slug}`}>
                   <Card
-                    className="hover-elevate cursor-pointer h-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                    className="hover-elevate cursor-pointer h-full w-full border-[#dbe4ee] bg-white group transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                     data-testid={`home-card-project-${project.slug}`}
                   >
                     <CardHeader className="pb-3">
@@ -266,11 +266,11 @@ function ProjectsPreview() {
                       </h3>
                     </CardHeader>
                     <CardContent className="pt-0 flex flex-col gap-4">
-                      <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3">
+                      <p className="text-[#64748b] text-sm leading-relaxed line-clamp-3 break-words">
                         {project.shortDesc}
                       </p>
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex flex-wrap gap-1.5">
+                      <div className="flex items-center justify-between gap-2 min-w-0">
+                        <div className="flex flex-wrap gap-1.5 min-w-0">
                           {project.tags.slice(0, 2).map((tag) => (
                             <Badge
                               key={tag}
@@ -281,7 +281,7 @@ function ProjectsPreview() {
                             </Badge>
                           ))}
                         </div>
-                        <div className="flex items-center gap-1 text-[#94a3b8]">
+                        <div className="flex items-center gap-1 text-[#94a3b8] flex-shrink-0">
                           <Users className="w-3.5 h-3.5" />
                           <span className="text-[11px] font-medium">{people.length}</span>
                         </div>
@@ -322,7 +322,7 @@ function PeoplePreview() {
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

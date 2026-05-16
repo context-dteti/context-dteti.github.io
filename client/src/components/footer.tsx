@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer className="bg-[#0f172a] text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="flex flex-col md:flex-row md:justify-between gap-12 mb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 sm:gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-7 h-7 rounded-md bg-[#2563eb] flex items-center justify-center">
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           <div className="md:text-right">
-            <h4 className="font-semibold text-xs uppercase tracking-[0.15em] text-[#64748b] mb-5">
+            <h4 className="font-semibold text-xs uppercase tracking-[0.15em] text-[#64748b] mb-4 sm:mb-5">
               Contact
             </h4>
             <address className="not-italic text-[#cbd5e1] text-sm leading-relaxed space-y-1">
@@ -46,12 +46,13 @@ export default function Footer() {
               <img
                 src="/dteti_logo.jpeg"
                 alt="DTETI Logo"
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
               />
               <div className="text-[#94a3b8] text-xs leading-snug">
                 <span className="font-semibold text-[#cbd5e1]">Part of DTETI</span>
                 <br />
-                Departemen Teknik Elektro dan Teknologi Informasi
+                <span className="hidden sm:inline">Departemen Teknik Elektro dan Teknologi Informasi</span>
+                <span className="sm:hidden">DTETI UGM</span>
               </div>
             </div>
             <p className="text-[#475569] text-xs">

@@ -53,7 +53,7 @@ export default function ProjectDetailPage() {
       <Navbar />
 
       <section className="pt-28 pb-6 bg-white border-b border-[#e2e8f0]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,8 +71,8 @@ export default function ProjectDetailPage() {
       </section>
 
       <section className="py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_320px] gap-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-[1fr_280px] gap-6 lg:gap-8">
             {/* Main content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export default function ProjectDetailPage() {
                 );
               })()}
 
-              <div className="bg-white rounded-xl border border-[#dbe4ee] p-6 sm:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <div className="bg-white rounded-xl border border-[#dbe4ee] p-5 sm:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
                 <div className="prose prose-slate max-w-none prose-headings:text-[#0f172a] prose-p:text-[#475569] prose-p:leading-[1.8] prose-li:text-[#475569] prose-strong:text-[#1e293b] prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3">
                   <ReactMarkdown>{project.body}</ReactMarkdown>
                 </div>
@@ -122,29 +122,31 @@ export default function ProjectDetailPage() {
               className="space-y-5"
             >
               {/* Navigation */}
-              <div className="flex gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 {prevProject ? (
-                  <Link href={`/projects/${prevProject.slug}`}>
-                    <span className="flex-1 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] text-white text-sm font-semibold cursor-pointer transition-colors hover:bg-[#1d4ed8]">
-                      <ChevronLeft className="w-4 h-4" />
-                      Prev Project
-                    </span>
+                  <Link
+                    href={`/projects/${prevProject.slug}`}
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] text-white text-sm font-semibold cursor-pointer transition-colors hover:bg-[#1d4ed8] no-underline"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    Prev Project
                   </Link>
                 ) : (
-                  <span className="flex-1 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#e2e8f0] text-[#94a3b8] text-sm font-semibold cursor-default">
+                  <span className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#e2e8f0] text-[#94a3b8] text-sm font-semibold cursor-default">
                     <ChevronLeft className="w-4 h-4" />
                     Prev Project
                   </span>
                 )}
                 {nextProject ? (
-                  <Link href={`/projects/${nextProject.slug}`}>
-                    <span className="flex-1 inline-flex items-center justify-end gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] text-white text-sm font-semibold cursor-pointer transition-colors hover:bg-[#1d4ed8]">
-                      Next Project
-                      <ChevronRight className="w-4 h-4" />
-                    </span>
+                  <Link
+                    href={`/projects/${nextProject.slug}`}
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] text-white text-sm font-semibold cursor-pointer transition-colors hover:bg-[#1d4ed8] no-underline"
+                  >
+                    Next Project
+                    <ChevronRight className="w-4 h-4" />
                   </Link>
                 ) : (
-                  <span className="flex-1 inline-flex items-center justify-end gap-1.5 px-4 py-2.5 rounded-lg bg-[#e2e8f0] text-[#94a3b8] text-sm font-semibold cursor-default">
+                  <span className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#e2e8f0] text-[#94a3b8] text-sm font-semibold cursor-default">
                     Next Project
                     <ChevronRight className="w-4 h-4" />
                   </span>

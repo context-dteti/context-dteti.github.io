@@ -31,7 +31,7 @@ export default function PeoplePage() {
       <Navbar />
 
       <section className="pt-28 pb-6 bg-white border-b border-[#e2e8f0]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,8 +50,8 @@ export default function PeoplePage() {
       </section>
 
       <section className="py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
             {SORTED_PEOPLE.map((person, i) => {
               const projects = getProjectsForPerson(person.id);
               const extraProjects = projects.length - MAX_PROJECTS_SHOWN;
@@ -80,8 +80,8 @@ export default function PeoplePage() {
                       </div>
 
                       {/* Info */}
-                      <div className="p-4">
-                        <h3 className="font-bold text-[#0f172a] text-sm leading-snug mb-0.5">
+                      <div className="p-3 sm:p-4">
+                        <h3 className="font-bold text-[#0f172a] text-xs sm:text-sm leading-snug mb-0.5">
                           {person.name}
                         </h3>
                         <p className="text-[#2563eb] text-xs font-medium">

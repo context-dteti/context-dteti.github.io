@@ -32,7 +32,7 @@ export default function Navbar() {
     <div
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        padding: showPill ? "12px 24px 0" : "0px 0px 0",
+        padding: showPill ? "12px 12px 0" : "0px 0px 0",
         transition: "padding 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
       }}
       data-testid="navbar"
@@ -51,7 +51,7 @@ export default function Navbar() {
           transition: `max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-radius ${menuOpen ? "0s" : "0.35s cubic-bezier(0.4, 0, 0.2, 1)"}, background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)`,
         }}
       >
-        <div className="px-5 sm:px-6 h-14 flex items-center justify-between gap-4">
+        <div className="px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
           <Link
             href="/"
             className="flex items-center gap-2.5 no-underline"
@@ -122,7 +122,7 @@ export default function Navbar() {
 
         {menuOpen && (
           <div
-            className={`md:hidden border-t px-5 py-3 flex flex-col gap-1 ${
+            className={`md:hidden border-t px-4 py-3 flex flex-col gap-1 ${
               showPill ? "border-[#f1f5f9]" : "border-white/10"
             }`}
           >
